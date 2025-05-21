@@ -6,7 +6,7 @@
 
 **ByteCatcher** is a minimal, JavaFX-powered desktop application for downloading videos and audio from popular platforms like **YouTube, Udemy**, and more. It wraps powerful tools like `yt-dlp` and `ffmpeg` under a user-friendly GUI, making media downloading accessible to everyone — no command-line knowledge needed.
 
-# 📥 Current Development
+👀 📥 Current Development
 <p align="center">
   <img src="https://github.com/user-attachments/assets/a2a32a43-25c9-4841-8d6b-8b0f20643e74" alt="byteCatcher" width="500"/>
 </p>
