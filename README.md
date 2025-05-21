@@ -1,4 +1,7 @@
-![byteCatcher](https://github.com/user-attachments/assets/5a8f8359-3642-44e0-be8c-09407ee80d93)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/5a8f8359-3642-44e0-be8c-09407ee80d93" alt="byteCatcher" width="300"/>
+</p>
+
 
 # 📥 ByteCatcher
 
