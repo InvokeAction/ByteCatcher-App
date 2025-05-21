@@ -115,8 +115,6 @@ Please follow clean code practices and Java naming conventions. Keep GUI changes
 - [ ] Video quality selector (360p/720p/1080p)
 - [ ] Download progress bar
 - [ ] Support for playlists
-- [ ] Pause/resume downloads
-- [ ] Theme customization (dark/light)
 - [ ] Auto-update mechanism
 
 ## 📜 License
@@ -128,4 +126,3 @@ This project is open-sourced under the **MIT License** — see the [LICENSE](./L
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)  
 - [ffmpeg](https://ffmpeg.org/)  
 - JavaFX, OpenJFX team  
-- Icons from [iconmonstr.com](https://iconmonstr.com/)
