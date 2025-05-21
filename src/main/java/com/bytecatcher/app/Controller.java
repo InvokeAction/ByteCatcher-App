@@ -3,6 +3,7 @@ package com.bytecatcher.app;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import java.io.File;
@@ -17,13 +18,14 @@ public class Controller {
     private TextField oYoutubeSource;
     @FXML
     private TextField oDownloadLocation;
+    @FXML
+    private TextArea oYtloggingArea;
 
     @FXML
     void onDownload(ActionEvent e) {
-        Youtube yt = new Youtube(oYoutubeSource, oDownloadLocation);
+        Youtube yt = new Youtube(oYoutubeSource, oDownloadLocation, oYtloggingArea);
         Thread yThread = yt.getDownloaderThread();
         yThread.start();
-
     }
 
     @FXML
