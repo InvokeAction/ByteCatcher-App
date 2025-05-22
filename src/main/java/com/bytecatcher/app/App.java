@@ -10,7 +10,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) {
         try {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bytecatcher/app/view/MainScene.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bytecatcher/app/view/TermsConditionsScene.fxml"));
         Parent root = loader.load();
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

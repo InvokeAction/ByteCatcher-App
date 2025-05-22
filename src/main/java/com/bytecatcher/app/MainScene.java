@@ -11,7 +11,7 @@ import com.bytecatcher.app.helper.Youtube;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 
-public class Controller {
+public class MainScene {
     @FXML
     private Button oYoutubeDownload;
     @FXML
