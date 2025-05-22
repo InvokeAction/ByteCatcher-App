@@ -27,7 +27,7 @@
                      <children>
                         <AnchorPane layoutX="0.800000011920929" prefHeight="371.0" prefWidth="603.0" style="-fx-background-color: #666666;">
                            <children>
-                              <TitledPane collapsible="false" layoutX="4.800000190734863" prefHeight="370.0" prefWidth="603.0" text="Youtube Video Settings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TitledPane collapsible="false" layoutX="4.800000190734863" prefHeight="370.0" prefWidth="603.0" text="Udemy Video Settings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font size="15.0" />
                                  </font>
@@ -83,6 +83,37 @@
                                                                      <VBox.margin>
                                                                         <Insets />
                                                                      </VBox.margin>
+                                                                  </HBox>
+                                                                  <Separator prefWidth="200.0" />
+                                                                  <HBox prefHeight="32.0" prefWidth="586.0">
+                                                                     <children>
+                                                                        <Label text="User Name" textFill="WHITE">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <TextField prefHeight="27.0" prefWidth="189.0">
+                                                                           <HBox.margin>
+                                                                              <Insets left="22.0" top="2.0" />
+                                                                           </HBox.margin>
+                                                                        </TextField>
+                                                                        <Label text="Password" textFill="WHITE">
+                                                                           <HBox.margin>
+                                                                              <Insets left="15.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <TextField prefHeight="27.0" prefWidth="203.0">
+                                                                           <HBox.margin>
+                                                                              <Insets left="20.0" top="2.0" />
+                                                                           </HBox.margin>
+                                                                        </TextField>
+                                                                     </children>
                                                                   </HBox>
                                                                   <Separator prefWidth="200.0" />
                                                                   <HBox prefHeight="30.0" prefWidth="574.0">
@@ -196,7 +227,8 @@
                               <TextArea fx:id="oYtloggingArea" editable="false" layoutX="-1.5999999999999996" layoutY="36.0" prefHeight="164.0" prefWidth="612.8" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Consolas" size="12.0" />
-                                 </font></TextArea>
+                                 </font>
+                              </TextArea>
                            </children>
                         </AnchorPane>
                      </content>

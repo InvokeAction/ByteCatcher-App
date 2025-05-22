@@ -5,6 +5,8 @@ import java.io.File;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ProgressBar;
+import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -15,17 +17,18 @@ import javafx.stage.Stage;
 import com.bytecatcher.app.ThreadCreator;
 
 public class YoutubeScene {
+
     @FXML
     private TextField oDownloadLocation;
 
     @FXML
-    private VBox oVideoSettingsBase;
-
-    @FXML
-    private AnchorPane oYoutubeBase;
+    private ProgressBar oLoader;
 
     @FXML
     private Button oYoutubeDownload;
+
+    @FXML
+    private AnchorPane oYoutubeFragment;
 
     @FXML
     private TextField oYoutubeSource;
@@ -35,8 +38,9 @@ public class YoutubeScene {
 
     @FXML
     void onDownload(ActionEvent event) {
-        ThreadCreator youtube = new ThreadCreator(oYoutubeSource, oDownloadLocation, oYtloggingArea);
-        youtube.getDownloaderThread();
+        ThreadCreator youtube = new ThreadCreator(oYoutubeSource, oDownloadLocation,oYtloggingArea, oLoader);
+        Thread youtubeThread = youtube.getDownloaderThread();
+        youtubeThread.start();
     }
 
     @FXML
