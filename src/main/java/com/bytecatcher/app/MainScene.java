@@ -2,44 +2,36 @@ package com.bytecatcher.app;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
-import javafx.scene.input.MouseEvent;
-import java.io.File;
-import com.bytecatcher.app.helper.Youtube;
-import javafx.stage.DirectoryChooser;
-import javafx.stage.Stage;
+import javafx.scene.layout.AnchorPane;
+import java.io.IOException;
 
 public class MainScene {
     @FXML
-    private Button oYoutubeDownload;
-    @FXML
-    private TextField oYoutubeSource;
-    @FXML
-    private TextField oDownloadLocation;
-    @FXML
-    private TextArea oYtloggingArea;
+    private AnchorPane oBaseAnchor;
 
     @FXML
-    void onDownload(ActionEvent e) {
-        Youtube yt = new Youtube(oYoutubeSource, oDownloadLocation, oYtloggingArea);
-        Thread yThread = yt.getDownloaderThread();
-        yThread.start();
+    private Button oUdemyButton;
+
+    @FXML
+    private Button oYoutubeButton;
+
+    @FXML
+    void onUdemyBase(ActionEvent event) {
+
     }
 
     @FXML
-    void onDownloadLocation(MouseEvent event) {
-        Stage stage = (Stage) oDownloadLocation.getScene().getWindow();
-        DirectoryChooser directoryChooser = new DirectoryChooser();
-        directoryChooser.setTitle("Select Download Location");
-        directoryChooser.setInitialDirectory(new File(System.getProperty("user.home")));
-        File selectedDir = directoryChooser.showDialog(stage);
-        if (selectedDir != null) {
-            oDownloadLocation.setText(selectedDir.getAbsolutePath());
-        } else {
-            System.out.println("No directory selected default path will be choosen");
-        }
+    void onYoutubeBase(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bytecatcher/app/view/YoutubeScene.fxml"));
+            AnchorPane youtubeFragment = loader.load();
+            oBaseAnchor.getChildren().clear();
+            oBaseAnchor.getChildren().add(youtubeFragment);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

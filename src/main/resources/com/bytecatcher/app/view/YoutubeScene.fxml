@@ -9,6 +9,7 @@
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,161 +17,193 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="oYoutubeBase" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="oYoutubeFragment" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bytecatcher.app.helper.YoutubeScene">
    <children>
-      <AnchorPane layoutX="0.800000011920929" prefHeight="371.0" prefWidth="603.0" style="-fx-background-color: #666666;">
+      <AnchorPane prefHeight="405.0" prefWidth="614.0">
          <children>
-            <TitledPane collapsible="false" layoutX="4.800000190734863" prefHeight="370.0" prefWidth="603.0" text="Video Settings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <font>
-                  <Font size="15.0" />
-               </font>
-               <content>
-                  <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
-                     <tabs>
-                        <Tab text="General Options">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <children>
-                                    <ScrollPane layoutX="24.0" layoutY="-6.0" prefHeight="300.0" prefWidth="601.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <content>
-                                          <VBox prefHeight="379.0" prefWidth="585.0" style="-fx-background-color: #666666;">
-                                             <children>
-                                                <HBox prefHeight="43.0" prefWidth="586.0">
+            <VBox fx:id="oVideoSettingsBase" prefHeight="405.6" prefWidth="614.4" style="-fx-background-color: #a6a6a6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane fx:id="oYoutubeBase">
+                     <children>
+                        <AnchorPane layoutX="0.800000011920929" prefHeight="371.0" prefWidth="603.0" style="-fx-background-color: #666666;">
+                           <children>
+                              <TitledPane collapsible="false" layoutX="4.800000190734863" prefHeight="370.0" prefWidth="603.0" text="Video Settings" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                                 <content>
+                                    <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+                                       <tabs>
+                                          <Tab text="General Options">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                                                    <children>
-                                                      <Label prefHeight="43.0" prefWidth="81.0" text="Source URL : " textFill="WHITE">
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" />
-                                                         </HBox.margin>
-                                                         <font>
-                                                            <Font name="System Bold Italic" size="13.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <TextField fx:id="oYoutubeSource" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" prefWidth="482.0" promptText="Enter Video Source URL">
-                                                         <HBox.margin>
-                                                            <Insets top="5.0" />
-                                                         </HBox.margin>
-                                                      </TextField>
+                                                      <ScrollPane layoutX="24.0" layoutY="-6.0" prefHeight="300.0" prefWidth="601.6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <content>
+                                                            <VBox prefHeight="379.0" prefWidth="585.0" style="-fx-background-color: #666666;">
+                                                               <children>
+                                                                  <HBox prefHeight="43.0" prefWidth="586.0">
+                                                                     <children>
+                                                                        <Label prefHeight="43.0" prefWidth="81.0" text="Source URL : " textFill="WHITE">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="13.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="oYoutubeSource" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" prefWidth="482.0" promptText="Enter Video Source URL">
+                                                                           <HBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </TextField>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Separator prefWidth="200.0">
+                                                                     <VBox.margin>
+                                                                        <Insets />
+                                                                     </VBox.margin>
+                                                                  </Separator>
+                                                                  <HBox prefHeight="43.0" prefWidth="586.0">
+                                                                     <children>
+                                                                        <Label prefHeight="43.0" prefWidth="81.0" text="Save DIR :" textFill="WHITE">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" />
+                                                                           </HBox.margin>
+                                                                           <font>
+                                                                              <Font name="System Bold Italic" size="13.0" />
+                                                                           </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="oDownloadLocation" maxHeight="30.0" minHeight="10.0" onMouseClicked="#onDownloadLocation" prefHeight="30.0" prefWidth="482.0" promptText="Choose Folder Location To Save">
+                                                                           <HBox.margin>
+                                                                              <Insets top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </TextField>
+                                                                     </children>
+                                                                     <VBox.margin>
+                                                                        <Insets />
+                                                                     </VBox.margin>
+                                                                  </HBox>
+                                                                  <Separator prefWidth="200.0" />
+                                                                  <HBox prefHeight="30.0" prefWidth="574.0">
+                                                                     <VBox.margin>
+                                                                        <Insets left="5.0" right="5.0" />
+                                                                     </VBox.margin>
+                                                                     <children>
+                                                                        <CheckBox mnemonicParsing="false" text="Ignore Errors " textFill="WHITE">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </CheckBox>
+                                                                        <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" valignment="TOP">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Separator>
+                                                                        <CheckBox mnemonicParsing="false" text="No Abort On Error" textFill="WHITE">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </CheckBox>
+                                                                        <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" valignment="TOP">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Separator>
+                                                                        <CheckBox mnemonicParsing="false" text="Abort On Error " textFill="WHITE">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </CheckBox>
+                                                                        <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" valignment="TOP">
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" />
+                                                                           </HBox.margin>
+                                                                        </Separator>
+                                                                        <CheckBox mnemonicParsing="false" text="Ignore Config" textFill="WHITE">
+                                                                           <font>
+                                                                              <Font size="13.0" />
+                                                                           </font>
+                                                                           <HBox.margin>
+                                                                              <Insets left="5.0" right="5.0" top="5.0" />
+                                                                           </HBox.margin>
+                                                                        </CheckBox>
+                                                                     </children>
+                                                                  </HBox>
+                                                                  <Separator prefWidth="200.0" />
+                                                               </children>
+                                                            </VBox>
+                                                         </content>
+                                                      </ScrollPane>
                                                    </children>
-                                                </HBox>
-                                                <Separator prefWidth="200.0">
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </Separator>
-                                                <HBox prefHeight="43.0" prefWidth="586.0">
-                                                   <children>
-                                                      <Label prefHeight="43.0" prefWidth="81.0" text="Save DIR :" textFill="WHITE">
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" />
-                                                         </HBox.margin>
-                                                         <font>
-                                                            <Font name="System Bold Italic" size="13.0" />
-                                                         </font>
-                                                      </Label>
-                                                      <TextField fx:id="oDownloadLocation" maxHeight="30.0" minHeight="10.0" onMouseClicked="#onDownloadLocation" prefHeight="30.0" prefWidth="482.0" promptText="Choose Folder Location To Save">
-                                                         <HBox.margin>
-                                                            <Insets top="5.0" />
-                                                         </HBox.margin>
-                                                      </TextField>
-                                                   </children>
-                                                   <VBox.margin>
-                                                      <Insets />
-                                                   </VBox.margin>
-                                                </HBox>
-                                                <Separator prefWidth="200.0" />
-                                                <HBox prefHeight="30.0" prefWidth="574.0">
-                                                   <VBox.margin>
-                                                      <Insets left="5.0" right="5.0" />
-                                                   </VBox.margin>
-                                                   <children>
-                                                      <CheckBox mnemonicParsing="false" text="Ignore Errors " textFill="WHITE">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" top="5.0" />
-                                                         </HBox.margin>
-                                                      </CheckBox>
-                                                      <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" valignment="TOP">
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" />
-                                                         </HBox.margin>
-                                                      </Separator>
-                                                      <CheckBox mnemonicParsing="false" text="No Abort On Error" textFill="WHITE">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" top="5.0" />
-                                                         </HBox.margin>
-                                                      </CheckBox>
-                                                      <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" valignment="TOP">
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" />
-                                                         </HBox.margin>
-                                                      </Separator>
-                                                      <CheckBox mnemonicParsing="false" text="Abort On Error " textFill="WHITE">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" top="5.0" />
-                                                         </HBox.margin>
-                                                      </CheckBox>
-                                                      <Separator maxHeight="30.0" minHeight="30.0" orientation="VERTICAL" prefHeight="30.0" valignment="TOP">
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" />
-                                                         </HBox.margin>
-                                                      </Separator>
-                                                      <CheckBox mnemonicParsing="false" text="Ignore Config" textFill="WHITE">
-                                                         <font>
-                                                            <Font size="13.0" />
-                                                         </font>
-                                                         <HBox.margin>
-                                                            <Insets left="5.0" right="5.0" top="5.0" />
-                                                         </HBox.margin>
-                                                      </CheckBox>
-                                                   </children>
-                                                </HBox>
-                                                <Separator prefWidth="200.0" />
-                                             </children>
-                                          </VBox>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </AnchorPane>
-                           </content>
-                        </Tab>
-                        <Tab text="Network Settings">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                           </content>
-                        </Tab>
-                        <Tab text="Geo Restriction">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                           </content>
-                        </Tab>
-                     </tabs>
-                  </TabPane>
-               </content>
-            </TitledPane>
+                                                </AnchorPane>
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Network Settings">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </Tab>
+                                          <Tab text="Geo Restriction">
+                                             <content>
+                                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                             </content>
+                                          </Tab>
+                                       </tabs>
+                                    </TabPane>
+                                 </content>
+                              </TitledPane>
+                           </children>
+                        </AnchorPane>
+                        <HBox alignment="CENTER_RIGHT" layoutX="0.800000011920929" layoutY="369.6000061035156" prefHeight="34.0" prefWidth="598.0">
+                           <children>
+                              <ProgressBar prefHeight="18.0" prefWidth="464.0" progress="0.0" />
+                              <Button mnemonicParsing="false" text="Cancle">
+                                 <HBox.margin>
+                                    <Insets left="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="oYoutubeDownload" mnemonicParsing="false" onAction="#onDownload" prefHeight="26.0" prefWidth="72.0" text="Download">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="1.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
          </children>
       </AnchorPane>
-      <HBox alignment="CENTER_RIGHT" layoutX="0.800000011920929" layoutY="369.6000061035156" prefHeight="34.0" prefWidth="598.0">
+      <AnchorPane layoutY="405.8000183105469" prefHeight="196.0" prefWidth="614.0" style="-fx-background-color: #f2f2f2;">
          <children>
-            <ProgressBar prefHeight="18.0" prefWidth="464.0" progress="0.0" />
-            <Button mnemonicParsing="false" text="Cancle">
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="oYoutubeDownload" mnemonicParsing="false" onAction="#onDownload" prefHeight="26.0" prefWidth="72.0" text="Download">
-               <HBox.margin>
-                  <Insets left="5.0" right="1.0" />
-               </HBox.margin>
-            </Button>
+            <VBox prefHeight="196.0" prefWidth="614.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TitledPane animated="false" collapsible="false" prefHeight="196.0" prefWidth="551.0" style="-fx-background-color: #a6a6a6;" text="Console Message">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="592.0">
+                           <children>
+                              <TextArea fx:id="oYtloggingArea" layoutX="27.0" layoutY="-15.0" prefHeight="170.4" prefWidth="831.2" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TitledPane>
+               </children>
+            </VBox>
          </children>
-      </HBox>
+      </AnchorPane>
    </children>
 </AnchorPane>
