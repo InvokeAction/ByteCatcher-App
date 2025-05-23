@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="oYoutubeFragment" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bytecatcher.app.helper.YoutubeScene">
+<AnchorPane xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bytecatcher.app.helper.UdemyScene">
    <children>
       <AnchorPane prefHeight="405.0" prefWidth="614.0">
          <children>
@@ -52,7 +52,7 @@
                                                                               <Font size="13.0" />
                                                                            </font>
                                                                         </Label>
-                                                                        <TextField fx:id="oYoutubeSource" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" prefWidth="482.0" promptText="Enter Video Source URL">
+                                                                        <TextField fx:id="oUdemySource" maxHeight="30.0" minHeight="10.0" prefHeight="30.0" prefWidth="482.0" promptText="Enter Video Source URL">
                                                                            <HBox.margin>
                                                                               <Insets top="5.0" />
                                                                            </HBox.margin>
@@ -89,26 +89,26 @@
                                                                      <children>
                                                                         <Label text="User Name" textFill="WHITE">
                                                                            <HBox.margin>
-                                                                              <Insets left="5.0" top="5.0" />
+                                                                              <Insets left="6.0" top="5.0" />
                                                                            </HBox.margin>
                                                                            <font>
                                                                               <Font size="13.0" />
                                                                            </font>
                                                                         </Label>
-                                                                        <TextField prefHeight="27.0" prefWidth="189.0">
+                                                                        <TextField fx:id="oUdemyUserName" prefHeight="27.0" prefWidth="189.0" promptText="Enter Username">
                                                                            <HBox.margin>
                                                                               <Insets left="22.0" top="2.0" />
                                                                            </HBox.margin>
                                                                         </TextField>
                                                                         <Label text="Password" textFill="WHITE">
                                                                            <HBox.margin>
-                                                                              <Insets left="15.0" top="5.0" />
+                                                                              <Insets left="6.0" top="5.0" />
                                                                            </HBox.margin>
                                                                            <font>
                                                                               <Font size="13.0" />
                                                                            </font>
                                                                         </Label>
-                                                                        <TextField prefHeight="27.0" prefWidth="203.0">
+                                                                        <TextField fx:id="oUdemyPassword" prefHeight="27.0" prefWidth="209.0" promptText="Enter Password">
                                                                            <HBox.margin>
                                                                               <Insets left="20.0" top="2.0" />
                                                                            </HBox.margin>
@@ -203,7 +203,7 @@
                                     <Insets left="5.0" />
                                  </HBox.margin>
                               </Button>
-                              <Button fx:id="oYoutubeDownload" mnemonicParsing="false" onAction="#onDownload" prefHeight="26.0" prefWidth="72.0" text="Download">
+                              <Button fx:id="oUdemyDownload" mnemonicParsing="false" onAction="#onDownload" prefHeight="26.0" prefWidth="72.0" text="Download">
                                  <HBox.margin>
                                     <Insets left="5.0" right="1.0" />
                                  </HBox.margin>
@@ -224,7 +224,7 @@
                      <content>
                         <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="164.0" prefWidth="592.0">
                            <children>
-                              <TextArea fx:id="oYtloggingArea" editable="false" layoutX="-1.5999999999999996" layoutY="36.0" prefHeight="164.0" prefWidth="612.8" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                              <TextArea fx:id="oUdemyloggingArea" editable="false" layoutX="-1.5999999999999996" layoutY="36.0" prefHeight="164.0" prefWidth="612.8" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                  <font>
                                     <Font name="Consolas" size="12.0" />
                                  </font>

@@ -19,7 +19,15 @@ public class MainScene {
 
     @FXML
     void onUdemyBase(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/bytecatcher/app/view/UdemyScene.fxml"));
+            AnchorPane youtubeFragment = loader.load();
+            oBaseAnchor.getChildren().clear();
+            oBaseAnchor.getChildren().add(youtubeFragment);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

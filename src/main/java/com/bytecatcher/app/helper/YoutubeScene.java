@@ -1,20 +1,19 @@
 package com.bytecatcher.app.helper;
 
 import java.io.File;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
-import javafx.scene.control.ProgressIndicator;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
-import com.bytecatcher.app.ThreadCreator;
 
 public class YoutubeScene {
 
@@ -38,9 +37,14 @@ public class YoutubeScene {
 
     @FXML
     void onDownload(ActionEvent event) {
-        ThreadCreator youtube = new ThreadCreator(oYoutubeSource, oDownloadLocation,oYtloggingArea, oLoader);
-        Thread youtubeThread = youtube.getDownloaderThread();
-        youtubeThread.start();
+        Map<String, String> commandMap = new LinkedHashMap<>();
+        commandMap.put("--source", oYoutubeSource.getText()); // URL will be added last
+        String outputTemplate = oDownloadLocation.getText() + "\\%(title)s.%(ext)s";
+        commandMap.put("--output", outputTemplate);
+        commandMap.put("-f", "bestvideo*+bestaudio/best");
+        commandMap.put("--ffmpeg-location", "lib/ffmpeg.exe");
+        ThreadCreator creator = new ThreadCreator(commandMap, oYtloggingArea, oLoader);
+        creator.getDownloaderThread().start();
     }
 
     @FXML
